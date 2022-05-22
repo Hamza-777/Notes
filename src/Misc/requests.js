@@ -2,7 +2,6 @@ import axios from 'axios';
 import {
   getTheme,
   setAuth,
-  getAuth,
   setUser,
   removeAuth,
   removeUser,
