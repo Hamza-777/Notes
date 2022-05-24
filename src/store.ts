@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './Reducers/authReducer';
+import noteReducer from './Reducers/noteReducer';
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
+    note: noteReducer,
   },
 });
 

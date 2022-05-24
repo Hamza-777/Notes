@@ -1,0 +1,73 @@
+.note-form {
+  gap: 0.5rem;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.note-form > .form-group {
+  width: 100%;
+}
+
+.colors,
+.priority {
+  gap: 1rem;
+}
+
+.color {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: var(--default-transition);
+}
+
+.color-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.color:hover {
+  transform: scale(1.1);
+}
+
+.red {
+  background-color: #ff8c8c;
+}
+
+.green {
+  background-color: #e3fcbf;
+}
+
+.blue {
+  background-color: #b3e8e5;
+}
+
+.yellow {
+  background-color: #ffe69a;
+}
+
+.note-form > button {
+  margin-right: auto;
+}
+
+.notes {
+  gap: 1rem;
+}
+
+.all-notes {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.filter-panel {
+  gap: 1rem;
+  border-radius: 7px;
+  border: 2px solid #333;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filter-panel > .form-group {
+  gap: 1rem;
+}
