@@ -3,11 +3,12 @@ import './Navbar.css';
 import { useAppSelector, useAppDispatch } from '../../hooks';
 import { logout } from '../../Reducers/authReducer';
 import { successPopup } from '../../Misc/toasts';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const dispatch = useAppDispatch();
   const { userLoggedIn } = useAppSelector((state) => state.auth);
+  const location = useLocation().pathname;
 
   const logoutUser = (e: any) => {
     dispatch(logout());
@@ -35,7 +36,8 @@ const Navbar: React.FC = () => {
           )}
         </section>
       </nav>
-      <article className='user-controls flex-center'>
+      {
+        location !== '/' && location !== '/signup' && <article className='user-controls flex-center'>
         <Link to='/home' className='btn btn-outline'>
           Home
         </Link>
@@ -46,6 +48,7 @@ const Navbar: React.FC = () => {
           Trash
         </Link>
       </article>
+      }
     </header>
   );
 };

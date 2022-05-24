@@ -18,11 +18,14 @@ const Trash: React.FC = () => {
         {trashed && trashed.length > 0 ? (
           trashed.map((note) => <Note note={note} />)
         ) : (
-          <img
-            className='img'
-            src='https://static.vecteezy.com/system/resources/previews/005/006/031/original/no-result-data-document-or-file-not-found-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-etc-vector.jpg'
-            alt='no content'
-          />
+          <div className='flex-center'>
+            <img
+              className='img'
+              src='https://cdn.dribbble.com/users/144388/screenshots/1364170/spaceman.gif'
+              alt='no content'
+              style={{ width: 'auto', height: 'auto' }}
+            />
+          </div>
         )}
       </div>
     </section>
