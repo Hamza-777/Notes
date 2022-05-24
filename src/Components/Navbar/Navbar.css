@@ -1,0 +1,18 @@
+.header {
+  padding: 1rem 2rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  border-bottom: 2px solid var(--grey-9-color);
+  z-index: 1;
+  background-color: var(--light-color);
+}
+
+.navbar {
+  width: 100%;
+}
+
+.user-controls {
+  gap: 1rem;
+}

@@ -1,6 +1,6 @@
-import { Response } from "miragejs";
-import { requiresAuth } from "../utils/authUtils";
-import { v4 as uuid } from "uuid";
+import { Response } from 'miragejs';
+import { requiresAuth } from '../utils/authUtils';
+import { v4 as uuid } from 'uuid';
 
 /**
  * All the routes related to Notes are present here.
@@ -19,11 +19,35 @@ export const getAllNotesHandler = function (schema, request) {
       404,
       {},
       {
-        errors: ["The email you entered is not Registered. Not Found error"],
+        errors: ['The email you entered is not Registered. Not Found error'],
       }
     );
   }
   return new Response(200, {}, { notes: user.notes });
+};
+
+/**
+ * This handler handles gets a note by ID in the db.
+ * send GET Request at /api/notes/:noteId
+ * */
+
+export const getANoteHandler = function (schema, request) {
+  const user = requiresAuth.call(this, request);
+  if (!user) {
+    return new Response(
+      404,
+      {},
+      {
+        errors: ['The email you entered is not Registered. Not Found error'],
+      }
+    );
+  }
+  const noteId = request.params.noteId;
+  return new Response(
+    200,
+    {},
+    { note: user.notes.filter((note) => note._id === noteId)[0] }
+  );
 };
 
 /**
@@ -40,7 +64,7 @@ export const createNoteHandler = function (schema, request) {
         404,
         {},
         {
-          errors: ["The email you entered is not Registered. Not Found error"],
+          errors: ['The email you entered is not Registered. Not Found error'],
         }
       );
     }
@@ -76,7 +100,7 @@ export const deleteNoteHandler = function (schema, request) {
         404,
         {},
         {
-          errors: ["The email you entered is not Registered. Not Found error"],
+          errors: ['The email you entered is not Registered. Not Found error'],
         }
       );
     }
@@ -109,7 +133,7 @@ export const updateNoteHandler = function (schema, request) {
         404,
         {},
         {
-          errors: ["The email you entered is not Registered. Not Found error"],
+          errors: ['The email you entered is not Registered. Not Found error'],
         }
       );
     }
@@ -144,7 +168,7 @@ export const archiveNoteHandler = function (schema, request) {
         404,
         {},
         {
-          errors: ["The email you entered is not Registered. Not Found error"],
+          errors: ['The email you entered is not Registered. Not Found error'],
         }
       );
     }
@@ -183,7 +207,7 @@ export const trashNoteHandler = function (schema, request) {
         404,
         {},
         {
-          errors: ["The email you entered is not Registered. Not Found error"],
+          errors: ['The email you entered is not Registered. Not Found error'],
         }
       );
     }
