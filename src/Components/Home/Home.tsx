@@ -58,7 +58,7 @@ const Home: React.FC = () => {
         </div>
       </div>
       <div className='notes flex-center flex-col'>
-        {notes &&
+        {notes && notes.length > 0 ? (
           notes.map((note) =>
             byPriority === 'all'
               ? note.tags.filter((item) => item.includes(byTag)).length > 0 && (
@@ -68,7 +68,14 @@ const Home: React.FC = () => {
                 note.priority === byPriority && (
                   <Note key={note._id} note={note} />
                 )
-          )}
+          )
+        ) : (
+          <img
+            className='img'
+            src='https://static.vecteezy.com/system/resources/previews/005/006/031/original/no-result-data-document-or-file-not-found-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-etc-vector.jpg'
+            alt='no content'
+          />
+        )}
       </div>
     </section>
   );

@@ -41,6 +41,17 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route
+          path='*'
+          element={
+            <section className='container'>
+              <img
+                src='https://freefrontend.com/assets/img/html-css-404-page-templates/HTML-404-Page-with-SVG.png'
+                alt='404'
+              />
+            </section>
+          }
+        />
       </Routes>
       <ToastContainer />
     </Router>
